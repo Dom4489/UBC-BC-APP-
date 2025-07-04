@@ -12,11 +12,7 @@ import cron from "node-cron"
 //     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
 //     allowedHeaders: ['Content-Type', 'Authorization'],
 // };
-const corsOptions = {
-    origin: 'https://ubc-bc.netlify.app',
-    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-};
+
 
 env.config();
 const app = express();

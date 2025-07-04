@@ -1,5 +1,5 @@
-import ig from "../src/assets/instagram.svg"
-import fb from "../src/assets/facebook.svg"
+import ig from '../assets/instagram.svg'
+import fb from "../assets/facebook.svg"
 export default function Socials() {
   return (
     <div className="flex w-[60%] justify-between mb-6">
