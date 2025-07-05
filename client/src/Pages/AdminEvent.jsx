@@ -112,17 +112,16 @@ export default function AdminEvent() {
   }
 
   return (
-    <div className="flex justify-center items-center w-screen min-h-screen">
-      <div className="flex flex-col justify-between items-center  w-[80%] max-w-[30rem] mt-12 mb-7">
-      <div className="fixed top-[5.5rem]">
+    <div className="flex justify-center items-center w-screen min-h-screen overflow-y-scroll">
+      <div className="flex flex-col justify-between items-center  w-[80%] max-w-[30rem] mt-12 mb-7 relative">
+      <div className="sticky top-0 z-10">
           <Header message="Welcome to Admin" />
         </div>
-
-
-        <div className="flex flex-col items-center w-full">
+        <div className="flex flex-col items-center w-full mt-[-3rem]">
           {/* from here */}
           {!isEdit && (
-            <div className="flex flex-col items-center w-full mt-[-5rem]">
+            <div className="flex flex-col w-full relative">
+              <div className="sticky top-0 z-10">
               <EventCardLg
                 event_name={event.event_name}
                 event_location={event.event_location}
@@ -130,11 +129,13 @@ export default function AdminEvent() {
                 event_count={event.count}
                 event_date={event.event_date}
               />
-
-              <div className="flex flex-col w-full mb-5">
+              </div>
+              <div className="flex flex-col w-full mb-5 relative">
+                <div className="sticky top-0 z-10">
                 <h3 className="whitespace-nowrap font-light text-[#636363] text-md mb-2">
                   Attendees
                 </h3>
+                </div>
                 <div className="flex w-full items-end overflow-scroll">
                   {participants.map((participant) => {
                     return (
@@ -149,7 +150,7 @@ export default function AdminEvent() {
                 </div>
               </div>
 
-              <div className="flex justify-between w-full mb-7 mt-5">
+              <div className="flex justify-between w-full mb-7 mt-5 sticky top-0 z-10">
                 <button onClick={goToEventSignIn}
                 className="bg-gray-300 text-[#407076] font-bold rounded-xl h-[3rem] w-[40%] min-w-[9rem] shadow-lg hover:bg-[#407076] hover:text-white duration-500">
                   Sign In
@@ -174,7 +175,7 @@ export default function AdminEvent() {
               oldLocation={event.event_location}
             />
           )}
-          <div className="flex flex-col w-[65%] max-w-[20rem] items-center fixed top-[45rem]">
+          <div className="flex flex-col w-[65%] max-w-[20rem] items-center relative mt-4">
             <Report_Bug />
             {isEdit && <BlackBtn onClick={editback} text={"Back"} />}
             {!isEdit && <BlackBtn onClick={back} text={"Back"} />}
