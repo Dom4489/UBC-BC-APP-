@@ -113,15 +113,16 @@ export default function AdminEvent() {
 
   return (
     <div className="flex justify-center items-center w-screen min-h-screen">
-      <div className="flex flex-col justify-between items-center  w-[80%] max-w-[30rem] mt-12 mb-7 relative">
-      <div className="sticky top-0">
+      <div className="flex flex-col justify-between items-center  w-[80%] max-w-[30rem] mt-12 mb-7">
+      <div className="fixed top-[5.5rem]">
           <Header message="Welcome to Admin" />
         </div>
-        <div className="flex flex-col items-center w-full relative">
+
+
+        <div className="flex flex-col items-center w-full">
           {/* from here */}
           {!isEdit && (
             <div className="flex flex-col items-center w-full mt-[-5rem]">
-              <div className="sticky top-0 z-10">
               <EventCardLg
                 event_name={event.event_name}
                 event_location={event.event_location}
@@ -129,7 +130,7 @@ export default function AdminEvent() {
                 event_count={event.count}
                 event_date={event.event_date}
               />
-              </div>
+
               <div className="flex flex-col w-full mb-5">
                 <h3 className="whitespace-nowrap font-light text-[#636363] text-md mb-2">
                   Attendees
@@ -173,7 +174,7 @@ export default function AdminEvent() {
               oldLocation={event.event_location}
             />
           )}
-          <div className="flex flex-col w-[65%] max-w-[20rem] items-center relative">
+          <div className="flex flex-col w-[65%] max-w-[20rem] items-center fixed top-[45rem]">
             <Report_Bug />
             {isEdit && <BlackBtn onClick={editback} text={"Back"} />}
             {!isEdit && <BlackBtn onClick={back} text={"Back"} />}

@@ -94,12 +94,12 @@ function EventLog() {
   });
 
   return (
-    <div className="w-screen min-h-screen flex justify-center items-center">
-      <div className="flex flex-col justify-between items-center  w-[80%] max-w-[30rem] mt-7 mb-7">
-      <div className="fixed top-[5.5rem]">
+    <div className="w-screen min-h-screen flex justify-center items-center overflow-y-scroll">
+      <div className="flex flex-col justify-between items-center  w-[80%] max-w-[30rem] mt-3 mb-5 relative">
+      <div className="sticky top-0 z-10">
         <Header message="Welcome to Admin" />
         </div>
-        <div className="flex flex-col w-[75%] max-w-[24rem] fixed top-[10.5rem]">
+        <div className="flex flex-col w-[75%] max-w-[24rem] sticky top-0 z-10 mt-[-1rem]">
           <h3 className="tracking-wider font-bold text-[#636363] text-sm mb-3">
             Upcoming events
           </h3>
@@ -189,7 +189,7 @@ function EventLog() {
         </div>
 
         {/* Past Events Section */}
-        <div className="flex flex-col w-[75%] max-w-[24rem] fixed top-[28rem]">
+        <div className="flex flex-col w-[75%] max-w-[24rem] sticky top-0 z-10 mt-4">
           <h3 className="tracking-wider font-bold text-[#636363] text-sm mb-3">
             Previous events
           </h3>
@@ -284,7 +284,7 @@ function EventLog() {
           )}
         </div>
 
-        <div className="flex flex-col w-[65%] max-w-[20rem] items-center fixed top-[45rem]">
+        <div className="flex flex-col w-[65%] max-w-[20rem] items-center sticky top-0 z-10 mt-4">
           <Report_Bug />
           {errorState.isError && (
             <p className="text-[10px] font-light text-[#cc0000] mb-5 mt-4 text-center">
