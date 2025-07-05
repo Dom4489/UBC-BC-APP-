@@ -117,10 +117,11 @@ export default function AdminEvent() {
       <div className="sticky top-0">
           <Header message="Welcome to Admin" />
         </div>
-        <div className="flex flex-col items-center w-full">
+        <div className="flex flex-col items-center w-full relative">
           {/* from here */}
           {!isEdit && (
             <div className="flex flex-col items-center w-full mt-[-5rem]">
+              <div className="sticky top-0 z-10">
               <EventCardLg
                 event_name={event.event_name}
                 event_location={event.event_location}
@@ -128,7 +129,7 @@ export default function AdminEvent() {
                 event_count={event.count}
                 event_date={event.event_date}
               />
-
+              </div>
               <div className="flex flex-col w-full mb-5">
                 <h3 className="whitespace-nowrap font-light text-[#636363] text-md mb-2">
                   Attendees
